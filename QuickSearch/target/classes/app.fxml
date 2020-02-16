@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="rootPane"
+          alignment="center"
+          hgap="10"
+          vgap="10"
+          xmlns="http://javafx.com/javafx/8.0.121"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="app.Controller">
+    <children>
+
+        <Button onMouseClicked="#choose"
+                prefWidth="90"
+                text="选择目录"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="0" />
+        <Label fx:id="srcDirectory">
+            <GridPane.margin>
+                <Insets left="100.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="searchField"
+                   prefWidth="900"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="1" />
+
+        <TableView fx:id="fileTable"
+                   prefHeight="700"
+                   prefWidth="900"
+                   GridPane.columnIndex="0"
+                   GridPane.columnSpan="2"
+                   GridPane.rowIndex="2">
+            <columns>
+                <TableColumn
+                        fx:id="nameColumn"
+                        prefWidth="220"
+                        text="名称">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="0.0" prefWidth="242.0" text="路径">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="path" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="sizeColumn" prefWidth="117.0" text="大小">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="sizeText" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="lastModifiedColumn" minWidth="0.0" prefWidth="300.0" text="修改时间">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastModifiedText" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
