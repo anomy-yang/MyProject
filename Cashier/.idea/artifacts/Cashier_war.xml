@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Cashier:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="hello-bit-idea.war">
+      <element id="artifact" artifact-name="Cashier:war exploded" />
+    </root>
+  </artifact>
+</component>
